@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct ClueData {
-    
+struct ClueData: Codable {
+
 }

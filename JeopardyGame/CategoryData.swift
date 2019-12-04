@@ -8,6 +8,8 @@
 
 import Foundation
 
-struct CategoryData {
-    
+struct CategoryData: Codable {
+    let id: Int
+    let title: String
+    let clues_count: Int
 }

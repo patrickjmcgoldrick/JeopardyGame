@@ -16,6 +16,14 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         NetworkManager.shared.loadCategories(completed: { (data) in
             print("categories data")
+            
+            let parser = CategoryParser()
+            parser.parse(data: data) { (categories) in
+                for category in categories {
+                    print(category.title)
+                }
+            }
+            
         })
     }
     
