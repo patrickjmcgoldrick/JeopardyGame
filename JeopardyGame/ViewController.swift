@@ -12,9 +12,11 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
+        NetworkManager.shared.loadCategories(completed: { (data) in
+            print("categories data")
+        })
     }
-
-
 }
 
