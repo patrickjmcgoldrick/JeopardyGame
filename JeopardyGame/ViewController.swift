@@ -14,6 +14,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        NetworkManager.shared.loadCategories(completed: { (data) in
+            print("categories data")
+        })
     }
     
 
