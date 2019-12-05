@@ -21,9 +21,11 @@ class JeopardyGameTests: XCTestCase {
 
     func testCategoryParser() {
         let testBundle = Bundle(for: type(of: self))
-        let path = testBundle.path(forResource: "catatories", ofType: "json")
-
-        XCTAssertNotNil(path, "Roster_Workforce file not found")
+        let filename = "categories"
+        
+        let path = testBundle.path(forResource: filename, ofType: "json")
+        XCTAssertNotNil(path, "\(filename) file not found")
+        
         guard let cleanPath = path else { return }
         
         // convert into URL
@@ -43,6 +45,33 @@ class JeopardyGameTests: XCTestCase {
         }
     }
 
+    func testCluesParser() {
+        let testBundle = Bundle(for: type(of: self))
+        let filename = "clues"
+        
+        let path = testBundle.path(forResource: filename, ofType: "json")
+        XCTAssertNotNil(path, "\(filename) file not found")
+        
+        guard let cleanPath = path else { return }
+        
+        // convert into URL
+        let url = NSURL.fileURL(withPath: cleanPath)
+        do {
+            // load json into Data object
+            let data = try Data(contentsOf: url)
+            
+            XCTAssertNotNil(data, "\(filename) Data came back nil")
+            
+            let parser = ClueParser()
+            parser.parse(data: data) { (clues) in
+                
+                print ("Parsing Done !!!!")
+                XCTAssertTrue(clues[0].answer == "pair of dice, lost", "Unexpected Data returned")
+            }
+        } catch {
+            assertionFailure("Error: " + error.localizedDescription)
+        }
+    }
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {

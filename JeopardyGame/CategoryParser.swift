@@ -25,7 +25,7 @@ final class CategoryParser {
                 parsed(categoryData)
                                
             } catch {
-                print ("Error Parsing JSON: \(error.localizedDescription)")
+                print ("Error Parsing CategoryData JSON: \(error.localizedDescription)")
             }
         }
     }
