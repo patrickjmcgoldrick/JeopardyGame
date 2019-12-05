@@ -22,7 +22,7 @@
 		5E3DD75923984EDC00AC7F84 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3DD75823984EDC00AC7F84 /* K.swift */; };
 		5E3DD75B239855ED00AC7F84 /* ClueParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3DD75A239855ED00AC7F84 /* ClueParser.swift */; };
 		5E3DD75D2398563400AC7F84 /* CategoryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3DD75C2398563400AC7F84 /* CategoryParser.swift */; };
-		5E3DD75F2398587500AC7F84 /* catatories.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E3DD75E2398587500AC7F84 /* catatories.json */; };
+		5E3DD75F2398587500AC7F84 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E3DD75E2398587500AC7F84 /* categories.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +64,7 @@
 		5E3DD75823984EDC00AC7F84 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		5E3DD75A239855ED00AC7F84 /* ClueParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClueParser.swift; sourceTree = "<group>"; };
 		5E3DD75C2398563400AC7F84 /* CategoryParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryParser.swift; sourceTree = "<group>"; };
-		5E3DD75E2398587500AC7F84 /* catatories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = catatories.json; path = testData/catatories.json; sourceTree = SOURCE_ROOT; };
+		5E3DD75E2398587500AC7F84 /* categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = categories.json; path = testData/categories.json; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,7 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				5E3DD739239848E800AC7F84 /* JeopardyGameTests.swift */,
-				5E3DD75E2398587500AC7F84 /* catatories.json */,
+				5E3DD75E2398587500AC7F84 /* categories.json */,
 				5E3DD73B239848E800AC7F84 /* Info.plist */,
 			);
 			path = JeopardyGameTests;
@@ -266,7 +266,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E3DD75F2398587500AC7F84 /* catatories.json in Resources */,
+				5E3DD75F2398587500AC7F84 /* categories.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

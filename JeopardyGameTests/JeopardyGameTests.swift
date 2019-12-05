@@ -21,7 +21,7 @@ class JeopardyGameTests: XCTestCase {
 
     func testCategoryParser() {
         let testBundle = Bundle(for: type(of: self))
-        let path = testBundle.path(forResource: "catatories", ofType: "json")
+        let path = testBundle.path(forResource: "categories", ofType: "json")
 
         XCTAssertNotNil(path, "Roster_Workforce file not found")
         guard let cleanPath = path else { return }
