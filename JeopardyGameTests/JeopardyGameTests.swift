@@ -20,6 +20,8 @@ class JeopardyGameTests: XCTestCase {
     }
 
     func testCategoryParser() {
+        let expectation = self.expectation(description: "Testing Categories Parser")
+        
         let testBundle = Bundle(for: type(of: self))
         let filename = "categories"
         
@@ -39,13 +41,20 @@ class JeopardyGameTests: XCTestCase {
             let parser = CategoryParser()
             parser.parse(data: data) { (categories) in
                 XCTAssertTrue(categories[0].title == "pair of dice, lost", "Unexpected Data returned")
+                
+                expectation.fulfill()
             }
         } catch {
             assertionFailure("Error: " + error.localizedDescription)
         }
+        
+        // 15 second wait for timeout
+        waitForExpectations(timeout: 15, handler: nil)
     }
 
     func testCluesParser() {
+        let expectation = self.expectation(description: "Testing Clues Parser")
+
         let testBundle = Bundle(for: type(of: self))
         let filename = "clues"
         
@@ -65,18 +74,15 @@ class JeopardyGameTests: XCTestCase {
             let parser = ClueParser()
             parser.parse(data: data) { (clues) in
                 
-                print ("Parsing Done !!!!")
-                XCTAssertTrue(clues[0].answer == "pair of dice, lost", "Unexpected Data returned")
+                XCTAssertTrue(clues[0].answer == "the Western division", "Unexpected Data returned")
+                
+                expectation.fulfill()
             }
         } catch {
             assertionFailure("Error: " + error.localizedDescription)
         }
+        
+        // 15 second wait for timeout
+        waitForExpectations(timeout: 15, handler: nil)
     }
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }
